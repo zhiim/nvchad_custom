@@ -9,86 +9,33 @@ map("i", "jj", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
--- custom gitsigns mappings
-map("n", "<leader>gtb", function()
-    require("gitsigns").toggle_current_line_blame()
-end, { desc = "Toggle blame of each line"})
+-- key mappings for neogen plugin
+map("n", "<leader>gen", function ()
+    require("neogen").generate()
+end, { desc = "Genearte annotation template"})
 
--- M.gitsigns = {
---   n = {
---     ["<leader>gtb"] = {
---       function()
---         require("gitsigns").toggle_current_line_blame()
---       end,
---       "Toggle blame of each line",
---     },
---   }
--- }
--- -- mappings for nvim-dap
--- M.dap = {
---     -- key mappings work in normal mode
---     n = {
---       -- set breakpoints
---       ["<leader>dbp"] = {
---           function()
---             require('dap').toggle_breakpoint()
---           end,
---           "Set breakpoints"
---       },
---       -- continue
---       ["<leader>dct"] = {
---           function()
---             require('dap').continue()
---           end,
---           "Launch debug sessions/ resuming execution"
---       },
---       -- setp over
---       ["<leader>dso"] = {
---           function()
---             require('dap').step_over()
---           end,
---           "Step over"
---       },
---       -- setp into
---       ["<leader>dsi"] = {
---           function()
---             require('dap').step_into()
---           end,
---           "Step into"
---       },
---         -- evaluate expression
---         ["<leader>dev"] = {
---             function()
---                 require('dapui').eval()
---             end
---         },
---         -- end the debug
---         ["<leader>ded"] = {
---             function()
---                 require('dap').terminate()
---             end
---         }
---     },
--- }
---
--- -- key mappings for neogen plugin
--- M.neogen = {
---     n = {
---         ["<leader>gen"] = {
---             function ()
---                 require("neogen").generate()
---             end,
---             "Genearte annotation template"
---         }
---     }
--- }
---
--- -- key mappings for vim-tmux-navigater
--- M.tmux = {
---     n = {
---         ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
---         ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
---         ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
---         ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
---     }
--- }
+-- key mappings for vim-tmux-navigater
+map("n", "<C-h>", ":TmuxNavigateLeft <cr>", { desc = "Tmux Window left"})
+map("n", "<C-l>", ":TmuxNavigateRight <cr>", { desc = "Tmux Window right"})
+map("n", "<C-j>", ":TmuxNavigateDown <cr>", { desc = "Tmux Window down"})
+map("n", "<C-k>", ":TmuxNavigateUp <cr>", { desc = "Tmux Window up"})
+
+-- mappings for nvim-dap
+-- map("n", "<leader>dbp", function ()
+--     require('dap').toggle_breakpoint()
+-- end, { desc = "Dap Set breakpoints" })
+-- map("n", "<leader>dct", function ()
+--     require('dap').continue()
+-- end, {desc = "dap Launch debug sessions/ resuming execution"})
+-- map("n", "<leader>dso", function ()
+--     require('dap').step_over()
+-- end, {desc = "dap Step over"})
+-- map("n", "<leader>dsi", function ()
+--     require('dap').step_into()
+-- end, {desc = "dap Step into"})
+-- map("n", "<leader>dev", function ()
+--     require('dapui').eval()
+-- end)
+-- map("n", "<leader>ded", function ()
+--     require('dap').terminate()
+-- end)

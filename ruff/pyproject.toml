@@ -1,0 +1,59 @@
+[tool.ruff]
+# Enable the pycodestyle (`E`) and Pyflakes (`F`) rules by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = [
+    "F",  # Pyflakes (various error check)
+    "E",  # pycodestyle Error
+    "W",  # pycodestyle Warn
+    "N",  # pep8-naming
+    "A",  # flak8-builtins
+    "PLC",  # Pylint
+    "PLE",
+    "PLW",
+    "NPY",  # Numpy-specific rules
+]
+ignore = [
+    "N802",  # function name should be lowwercase (conflict with PyQt)
+    "E402",  # import must at top of file (in some case sys.path.append need to
+             # be called before import some modules)
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+per-file-ignores = {}
+
+# Same as Black.
+line-length = 80
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.pydocstyle]
+convention = "google"  # use google style in docstring style check
