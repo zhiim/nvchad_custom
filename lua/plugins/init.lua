@@ -17,7 +17,11 @@ return {
 
   {
     "mfussenegger/nvim-lint",
-    lazy = false,
+    -- loading this plugin depends on event
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
     config = function ()
         require "configs.lint"
     end
