@@ -1,19 +1,33 @@
-local options = {
-  formatters_by_ft = {
-    -- use `:lua print(vim.bo.filetype)` to check filetype
-    lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
-    python = { "isort" },
-    c = { "clang-format" },
-    cpp = { "clang-format" },
-  },
+local conform = require("conform")
+local formatterConfig = vim.fn.stdpath("config") .. "/formatter_configs"
 
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 500,
-  --   lsp_fallback = true,
-  -- },
+local options = {
+	formatters_by_ft = {
+		-- use `:lua print(vim.bo.filetype)` to check filetype
+		lua = { "stylua" },
+		-- css = { "prettier" },
+		-- html = { "prettier" },
+		python = { "ruff_format" },
+		c = { "clang_format" },
+		cpp = { "clang_format" },
+	},
+
+	format_on_save = {
+		-- These options will be passed to conform.format()
+		timeout_ms = 500,
+		lsp_fallback = true,
+	},
 }
 
-require("conform").setup(options)
+conform.setup(options)
+
+conform.formatters.ruff_format = {
+	args = {
+		"format",
+		"--config",
+		formatterConfig .. "/ruff.toml",
+		"--stdin-filename",
+		"$FILENAME",
+		"-",
+	},
+}

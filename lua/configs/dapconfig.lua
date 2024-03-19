@@ -1,64 +1,64 @@
-local dap = require('dap')
+local dap = require("dap")
 local dapui = require("dapui")
 
 -- dap-ui configurations
 dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open()
+	dapui.open()
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
-  dapui.close()
+	dapui.close()
 end
 dap.listeners.before.event_exited["dapui_config"] = function()
-  dapui.close()
+	dapui.close()
 end
 
 -- c/c++ debugger
 local lldb_path, detached_status
 if vim.loop.os_uname().sysname == "Windows_NT" then
-    lldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe"
-    detached_status = false
+	lldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe"
+	detached_status = false
 else
-    lldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb"
-    detached_status = true
+	lldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb"
+	detached_status = true
 end
 dap.adapters.codelldb = {
-  type = 'server',
-  port = "${port}",
-  executable = {
-    -- CHANGE THIS to your path!
-    command = lldb_path,
-    args = {"--port", "${port}"},
+	type = "server",
+	port = "${port}",
+	executable = {
+		-- CHANGE THIS to your path!
+		command = lldb_path,
+		args = { "--port", "${port}" },
 
-    -- On windows you may have to uncomment this:
-    detached = detached_status,
-  }
+		-- On windows you may have to uncomment this:
+		detached = detached_status,
+	},
 }
 
 -- c/c++ debugger configurations
 dap.configurations.cpp = {
-  {
-    name = "Launch file",
-    type = "codelldb",
-    request = "launch",
-    program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
-    cwd = '${workspaceFolder}',
-    stopOnEntry = false,
-    args = function()
-        local argument_string = vim.fn.input("Program arguments: ")
-        return vim.fn.split(argument_string, " ", true)
-    end,
-  },
+	{
+		name = "Launch file",
+		type = "codelldb",
+		request = "launch",
+		program = function()
+			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+		end,
+		cwd = "${workspaceFolder}",
+		stopOnEntry = false,
+		args = function()
+			local argument_string = vim.fn.input("Program arguments: ")
+			return vim.fn.split(argument_string, " ", true)
+		end,
+	},
 }
 dap.configurations.c = dap.configurations.cpp
 
 -- python debugger
 local debugpy_path
 if vim.loop.os_uname().sysname == "Windows_NT" then
-    debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/debugpy/venv/bin/python.exe"
+	debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/debugpy/venv/bin/python.exe"
 else
-    debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/debugpy/venv/bin/python"
+	debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/debugpy/venv/bin/python"
 end
 
 require("dap-python").setup(debugpy_path)

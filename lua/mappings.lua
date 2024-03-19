@@ -1,4 +1,4 @@
-require "nvchad.mappings"
+require("nvchad.mappings")
 
 -- add yours here
 
@@ -10,15 +10,15 @@ map("i", "jj", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- key mappings for neogen plugin
-map("n", "<leader>gen", function ()
-    require("neogen").generate()
-end, { desc = "Genearte annotation template"})
+map("n", "<leader>gen", function()
+	require("neogen").generate()
+end, { desc = "Genearte annotation template" })
 
 -- key mappings for vim-tmux-navigater
-map("n", "<C-h>", ":TmuxNavigateLeft <cr>", { desc = "Tmux Window left"})
-map("n", "<C-l>", ":TmuxNavigateRight <cr>", { desc = "Tmux Window right"})
-map("n", "<C-j>", ":TmuxNavigateDown <cr>", { desc = "Tmux Window down"})
-map("n", "<C-k>", ":TmuxNavigateUp <cr>", { desc = "Tmux Window up"})
+map("n", "<C-h>", ":TmuxNavigateLeft <cr>", { desc = "Tmux Window left" })
+map("n", "<C-l>", ":TmuxNavigateRight <cr>", { desc = "Tmux Window right" })
+map("n", "<C-j>", ":TmuxNavigateDown <cr>", { desc = "Tmux Window down" })
+map("n", "<C-k>", ":TmuxNavigateUp <cr>", { desc = "Tmux Window up" })
 
 -- mappings for nvim-dap
 -- map("n", "<leader>dbp", function ()
