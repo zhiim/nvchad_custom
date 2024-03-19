@@ -1,23 +1,31 @@
 local lint = require('lint')
+local linterConfig = vim.fn.stdpath("config") .. "/linter_configs"
 
 lint.linters_by_ft = {
-  python = {"ruff"},
+  python = { "ruff" },
 }
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    lint.try_lint()
-  end,
-})
+vim.keymap.set("n", "<leader>lt", function()
+      lint.try_lint()
+    end, { desc = "Trigger linting for current file" })
+
 -- set config file for ruff
-local ruff_config
-if vim.loop.os_uname().sysname == "Linux" then
-    ruff_config = {"--config=" .. os.getenv("HOME") .. "/.config/nvim/ruff/pyproject.toml"}
-else
-    ruff_config = {"--config=".. os.getenv("UserProfile") .. "\\AppData\\Local\\nvim\\lua\\custom\\ruff\\pyproject.toml"}
-end
-
-local ruff = lint.linters.ruff
-ruff.args = {
-    "--config=/home/xu/.config/nvim/ruff/pyproject.toml"
+-- args can not be merged, so original setting should be copied
+lint.linters.ruff.args = {
+    "--force-exclude",
+    "--quiet",
+    "--stdin-filename",
+    vim.api.nvim_buf_get_name(0),
+    "--no-fix",
+    "--output-format",
+    "json",
+    "--config",
+    linterConfig .. "/ruff.toml",
+    "-",
 }
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+    callback = function()
+        lint.try_lint()
+    end,
+})
