@@ -15,10 +15,10 @@ end
 -- c/c++ debugger
 local lldb_path, detached_status
 if vim.loop.os_uname().sysname == "Windows_NT" then
-    lldb_path = os.getenv("UserProfile") .. "\\AppData\\Local\\nvim-data\\mason\\packages\\codelldb\\extension\\adapter\\codelldb.exe"
+    lldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe"
     detached_status = false
 else
-    lldb_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb"
+    lldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb"
     detached_status = true
 end
 dap.adapters.codelldb = {
@@ -56,9 +56,9 @@ dap.configurations.c = dap.configurations.cpp
 -- python debugger
 local debugpy_path
 if vim.loop.os_uname().sysname == "Windows_NT" then
-    debugpy_path = os.getenv("UserProfile") .. '\\AppData\\Local\\nvim-data\\mason\\packages\\debugpy\\venv\\Scripts\\python.exe'
+    debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/debugpy/venv/bin/python.exe"
 else
-    debugpy_path = os.getenv("HOME") .. '/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+    debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/debugpy/venv/bin/python"
 end
 
 require("dap-python").setup(debugpy_path)
