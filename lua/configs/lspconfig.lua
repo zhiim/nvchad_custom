@@ -15,10 +15,23 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+local function get_gcc_path()
+    local handle = io.popen("where c++")
+    if handle == nil then
+        print("get gcc path failed")
+    else
+        local result = handle:read("*a")
+        handle:close()
+        return result
+    end
+end
+
+local gcc_path = get_gcc_path()
+
 -- clangd setting, use mingw in windows
 local clangd_mingw
 if vim.loop.os_uname().sysname == "Windows_NT" then
-    clangd_mingw = "--query-driver=" .. os.getenv("UserProfile") .. "\\scoop\\apps\\mingw\\current\\bin\\c++.exe"
+    clangd_mingw = "--query-driver=" .. gcc_path
     lspconfig.clangd.setup {
         on_attach = on_attach,
         on_init = on_init,
