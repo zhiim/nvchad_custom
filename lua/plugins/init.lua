@@ -1,7 +1,7 @@
 return {
 	{
 		"stevearc/conform.nvim",
-		event = 'BufWritePre', -- uncomment for format on save
+		event = "BufWritePre", -- uncomment for format on save
 		config = function()
 			require("configs.conform")
 		end,
@@ -104,7 +104,7 @@ return {
 		"danymat/neogen",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = true,
-		keys = { "<leader>ga" },
+		keys = { "<leader>gdc" },
 		-- Uncomment next line if you want to follow only stable versions
 		-- version = "*"
 	},
@@ -112,6 +112,15 @@ return {
 	{
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
+	},
+
+	{
+		"echasnovski/mini.map",
+		version = false,
+		event = { "BufEnter" },
+		config = function()
+			require("configs.minimap")
+		end,
 	},
 
 	-- To make a plugin not be loaded

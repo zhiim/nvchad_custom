@@ -77,3 +77,4 @@ Trun on a formatter or linter by editing `lua/configs/conform.lua` for formatter
 * To share clipboard with system, install `xclip` on Linux with X11, install `win32yank` on Windows for WSL.
 * To use C++ linter with CMake, add `set(CMAKE_EXPORT_COMPILE_COMMANDS ON)` in CMakeList.txt. Also in Windows, `mingw` should be installed and `cmake` should use `make` or `ninja` as build generator.
 * In Windows, `pylsp` should be used with `venv`.
+* If `nvim-treesitter` output error `Invalid node type at position x for language x`, you can use `:echo nvim_get_runtime_file('parser', v:true)` to check whether more than one parser is used or not, than rename the nvim parser folder to another name to use treesitter parser only.
