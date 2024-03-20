@@ -71,6 +71,29 @@ return {
 		end,
 	},
 
+	{
+		"danymat/neogen",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = true,
+		keys = { "<leader>gdc" },
+		-- Uncomment next line if you want to follow only stable versions
+		-- version = "*"
+	},
+
+	{
+		"christoomey/vim-tmux-navigator",
+		lazy = false,
+	},
+
+	{
+		"echasnovski/mini.map",
+		version = false,
+		event = { "BufEnter" },
+		config = function()
+			require("configs.minimap")
+		end,
+	},
+
 	-- DAP plugin
 	-- {
 	--   "mfussenegger/nvim-dap",
@@ -99,52 +122,4 @@ return {
 	--   },
 	--   ft = "python",
 	-- },
-	--
-	{
-		"danymat/neogen",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = true,
-		keys = { "<leader>gdc" },
-		-- Uncomment next line if you want to follow only stable versions
-		-- version = "*"
-	},
-
-	-- {
-	-- 	"christoomey/vim-tmux-navigator",
-	-- 	lazy = false,
-	-- },
-
-	{
-		"echasnovski/mini.map",
-		version = false,
-		event = { "BufEnter" },
-		config = function()
-			require("configs.minimap")
-		end,
-	},
-
-	{
-		"mrjones2014/smart-splits.nvim",
-		lazy = false,
-		config = function()
-			vim.keymap.set("n", "<C-h>", require("smart-splits").move_cursor_left)
-			vim.keymap.set("n", "<C-j>", require("smart-splits").move_cursor_down)
-			vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
-			vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
-		end,
-	},
-
-	-- To make a plugin not be loaded
-	-- {
-	--   "NvChad/nvim-colorizer.lua",
-	--   enabled = false
-	-- },
-
-	-- All NvChad plugins are lazy-loaded by default
-	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-	-- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-	-- {
-	--   "mg979/vim-visual-multi",
-	--   lazy = false,
-	-- }
 }
