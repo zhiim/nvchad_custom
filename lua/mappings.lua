@@ -10,15 +10,15 @@ map("i", "jj", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- mappings for terminal
-map({ "n", "t" }, "<leader>v", function()
+map({ "n", "t" }, "<C-A-v>", function()
 	require("nvchad.term").toggle({ pos = "vsp", id = "vtoggleTerm", size = 0.3 })
 end, { desc = "Terminal Toggleable vertical term" })
 
-map({ "n", "t" }, "<leader>h", function()
+map({ "n", "t" }, "<C-A-h>", function()
 	require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
 end, { desc = "Terminal New horizontal term" })
 
-map({ "n", "t" }, "<leader>i", function()
+map({ "n", "t" }, "<C-A-i>", function()
 	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "Terminal Toggle Floating term" })
 
