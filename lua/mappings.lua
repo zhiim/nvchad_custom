@@ -9,6 +9,19 @@ map("i", "jj", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+-- mappings for terminal
+map({ "n", "t" }, "<leader>v", function()
+	require("nvchad.term").toggle({ pos = "vsp", id = "vtoggleTerm", size = 0.3 })
+end, { desc = "Terminal Toggleable vertical term" })
+
+map({ "n", "t" }, "<leader>h", function()
+	require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
+end, { desc = "Terminal New horizontal term" })
+
+map({ "n", "t" }, "<leader>i", function()
+	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
+end, { desc = "Terminal Toggle Floating term" })
+
 -- key mappings for neogen plugin
 map("n", "<leader>gen", function()
 	require("neogen").generate()
@@ -27,16 +40,16 @@ end, { desc = "Move Down" })
 map("n", "<C-k>", function()
 	require("smart-splits").move_cursor_up()
 end, { desc = "Move Up" })
-map("n", "<C-A-h>", function()
+map("n", "<A-h>", function()
 	require("smart-splits").resize_left()
 end, { desc = "Resize Left" })
-map("n", "<C-A-l>", function()
+map("n", "<A-l>", function()
 	require("smart-splits").resize_right()
 end, { desc = "Resize Right" })
-map("n", "<C-A-j>", function()
+map("n", "<A-j>", function()
 	require("smart-splits").resize_down()
 end, { desc = "Resize Down" })
-map("n", "<C-A-k>", function()
+map("n", "<A-k>", function()
 	require("smart-splits").resize_up()
 end, { desc = "Resize Up" })
 
