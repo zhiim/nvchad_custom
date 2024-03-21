@@ -8,6 +8,9 @@ M.ui = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
 	-- },
+	nvdash = {
+		load_on_startup = true,
+	},
 }
 
 return M
