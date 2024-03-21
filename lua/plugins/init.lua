@@ -80,9 +80,17 @@ return {
 		-- version = "*"
 	},
 
+	-- {
+	-- 	"christoomey/vim-tmux-navigator",
+	-- 	lazy = false,
+	-- },
+
 	{
-		"christoomey/vim-tmux-navigator",
+		"mrjones2014/smart-splits.nvim",
 		lazy = false,
+		config = function()
+			require("smart-splits").setup()
+		end,
 	},
 
 	{
