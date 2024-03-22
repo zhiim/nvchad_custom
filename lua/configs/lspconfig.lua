@@ -29,8 +29,9 @@ end
 local gcc_path = get_gcc_path()
 
 -- clangd setting, use mingw in windows
+local is_windows = vim.fn.has("win32") ~= 0
 local clangd_mingw
-if vim.loop.os_uname().sysname == "Windows_NT" then
+if is_windows then
 	clangd_mingw = "--query-driver=" .. gcc_path
 	lspconfig.clangd.setup({
 		on_attach = on_attach,

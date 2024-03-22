@@ -17,7 +17,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- use powershell in windows
-if vim.loop.os_uname().sysname == "Windows_NT" then
+local is_windows = vim.fn.has("win32") ~= 0
+if is_windows then
 	vim.o.shell = vim.fn.executable("pwsh") and "pwsh" or "powershell"
 	vim.o.shellcmdflag =
 		"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"

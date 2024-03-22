@@ -12,9 +12,10 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 	dapui.close()
 end
 
+local is_windows = vim.fn.has("win32") ~= 0
 -- c/c++ debugger
 local lldb_path, detached_status
-if vim.loop.os_uname().sysname == "Windows_NT" then
+if is_windows then
 	lldb_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe"
 	detached_status = false
 else
@@ -55,7 +56,7 @@ dap.configurations.c = dap.configurations.cpp
 
 -- python debugger
 local debugpy_path
-if vim.loop.os_uname().sysname == "Windows_NT" then
+if is_windows then
 	debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/debugpy/venv/bin/python.exe"
 else
 	debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/debugpy/venv/bin/python"
