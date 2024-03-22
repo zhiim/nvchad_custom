@@ -1,5 +1,13 @@
 require("nvchad.mappings")
 
+-- Disable mappings
+local nomap = vim.keymap.del
+
+-- diable default mappings of toggleable terminal
+nomap({ "n", "t" }, "<A-v>")
+nomap({ "n", "t" }, "<A-h>")
+nomap({ "n", "t" }, "<A-i>")
+
 -- add yours here
 
 local map = vim.keymap.set
