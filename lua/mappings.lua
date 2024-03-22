@@ -74,6 +74,11 @@ map("n", "<Leader>ms", function()
 	MiniMap.toggle_side()
 end, { desc = "MiniMap Toggle side" })
 
+-- mappings for copilot chat
+map("n", "<Leader>cco", ":CopilotChatOpen <cr>", { desc = "CopilotChat Open chat window" })
+map("n", "<Leader>ccc", ":CopilotChatClose <cr>", { desc = "CopilotChat Close chat window" })
+map("n", "<Leader>cct", ":CopilotChatToggle <cr>", { desc = "CopilotChat Toggle chat window" })
+
 -- mappings for nvim-dap
 -- map("n", "<leader>dbp", function ()
 --     require('dap').toggle_breakpoint()
