@@ -7,6 +7,8 @@ local nomap = vim.keymap.del
 nomap({ "n", "t" }, "<A-v>")
 nomap({ "n", "t" }, "<A-h>")
 nomap({ "n", "t" }, "<A-i>")
+nomap("n", "<leader>h")
+nomap("n", "<leader>v")
 
 -- add yours here
 
@@ -18,17 +20,17 @@ map("i", "jj", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- mappings for terminal
-map({ "n", "t" }, "<C-A-v>", function()
+map("n", "<leader>v", function()
 	require("nvchad.term").toggle({ pos = "vsp", id = "vtoggleTerm", size = 0.3 })
-end, { desc = "Terminal Toggleable vertical term" })
+end, { desc = "Terminal Toggleable vertical term in normal mode" })
 
-map({ "n", "t" }, "<C-A-h>", function()
+map("n", "<leader>h", function()
 	require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
-end, { desc = "Terminal New horizontal term" })
+end, { desc = "Terminal New horizontal term in terminal mode" })
 
-map({ "n", "t" }, "<C-A-i>", function()
+map("n", "<leader>i", function()
 	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
-end, { desc = "Terminal Toggle Floating term" })
+end, { desc = "Terminal Togglable Floating term in normal mode" })
 
 -- key mappings for neogen plugin
 map("n", "<leader>gen", function()
