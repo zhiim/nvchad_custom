@@ -32,6 +32,11 @@ map("n", "<leader>i", function()
 	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "Terminal Togglable Floating term in normal mode" })
 
+map("t", "<A-x>", function()
+	local win = vim.api.nvim_get_current_win()
+	vim.api.nvim_win_close(win, true)
+end, { desc = "Terminal Close term in terminal mode" })
+
 -- key mappings for neogen plugin
 map("n", "<leader>gen", function()
 	require("neogen").generate()
