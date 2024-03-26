@@ -94,6 +94,9 @@ map("n", "<Leader>cco", ":CopilotChatOpen <cr>", { desc = "CopilotChat Open chat
 map("n", "<Leader>ccc", ":CopilotChatClose <cr>", { desc = "CopilotChat Close chat window" })
 map("n", "<Leader>cct", ":CopilotChatToggle <cr>", { desc = "CopilotChat Toggle chat window" })
 
+-- mappings for lazygit
+map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
+
 -- mappings for nvim-dap
 -- map("n", "<leader>dbp", function ()
 --     require('dap').toggle_breakpoint()

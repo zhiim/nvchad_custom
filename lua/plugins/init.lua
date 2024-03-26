@@ -111,11 +111,6 @@ return {
 			"CopilotChatClose",
 			"CopilotChatToggle",
 		},
-		keys = {
-			"<Leader>cco",
-			"<Leader>ccc",
-			"<Leader>cct",
-		},
 		dependencies = {
 			{ "github/copilot.vim" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -142,9 +137,6 @@ return {
 		},
 		-- setting the keybinding for LazyGit with 'keys' is recommended in
 		-- order to load the plugin when the command is run for the first time
-		keys = {
-			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open LazyGit" },
-		},
 	},
 
 	-- DAP plugin
