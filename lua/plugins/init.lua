@@ -88,7 +88,15 @@ return {
 	{
 		"echasnovski/mini.map",
 		version = false,
-		event = { "BufEnter" },
+		keys = {
+			"<Leader>mo",
+			"<Leader>mc",
+			"<Leader>mt",
+			"<Leader>mf",
+			"<Leader>mr",
+			"<Leader>ms",
+		},
+		-- event = { "BufEnter" },
 		config = function()
 			require("configs.minimap")
 		end,
@@ -98,6 +106,16 @@ return {
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "canary",
 		-- event = "VeryLazy",
+		cmd = {
+			"CopilotChatOpen",
+			"CopilotChatClose",
+			"CopilotChatToggle",
+		},
+		keys = {
+			"<Leader>cco",
+			"<Leader>ccc",
+			"<Leader>cct",
+		},
 		dependencies = {
 			{ "github/copilot.vim" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -125,7 +143,7 @@ return {
 		-- setting the keybinding for LazyGit with 'keys' is recommended in
 		-- order to load the plugin when the command is run for the first time
 		keys = {
-			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open LazyGit" },
 		},
 	},
 
