@@ -112,7 +112,10 @@ return {
 			"CopilotChatToggle",
 		},
 		dependencies = {
-			{ "github/copilot.vim" }, -- or github/copilot.vim
+			{
+				"github/copilot.vim",
+				-- event = "VeryLazy",
+			},
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
 		opts = {
