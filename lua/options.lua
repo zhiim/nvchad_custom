@@ -27,3 +27,6 @@ if is_windows then
 	vim.o.shellquote = ""
 	vim.o.shellxquote = ""
 end
+
+-- disable smartindent which do not allow comments indenting
+vim.opt.smartindent = false
