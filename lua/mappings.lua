@@ -9,6 +9,7 @@ nomap({ "n", "t" }, "<A-h>")
 nomap({ "n", "t" }, "<A-i>")
 nomap("n", "<leader>h")
 nomap("n", "<leader>v")
+nomap("t", "<ESC>") -- confilct with lazygit
 
 -- add yours here
 
