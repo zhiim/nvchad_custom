@@ -142,6 +142,17 @@ return {
 		-- order to load the plugin when the command is run for the first time
 	},
 
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		cmd = "TroubleToggle",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
+
 	-- DAP plugin
 	-- {
 	--   "mfussenegger/nvim-dap",

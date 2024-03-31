@@ -97,6 +97,19 @@ map("n", "<Leader>cct", ":CopilotChatToggle <cr>", { desc = "CopilotChat Toggle 
 -- mappings for lazygit
 map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
 
+-- mappings for trouble.nvim
+map("n", "<leader>tt", "<cmd>TroubleToggle<cr>", { desc = "Trouble Toggle" })
+map(
+	"n",
+	"<leader>tw",
+	"<cmd>TroubleToggle workspace_diagnostics<cr>",
+	{ desc = "Trouble Toggle Workspace Diagnostics" }
+)
+map("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Trouble Toggle Document Diagnostics" })
+map("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { desc = "Trouble Toggle Loclist" })
+map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Trouble Toggle Quickfix" })
+map("n", "<leader>tlr", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Trouble Toggle LSP References" })
+
 -- mappings for nvim-dap
 -- map("n", "<leader>dbp", function ()
 --     require('dap').toggle_breakpoint()
