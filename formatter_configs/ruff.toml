@@ -49,6 +49,7 @@ select = [
     "PLE",
     "PLW",
     "NPY",  # Numpy-specific rules
+    "I",  # isort
 ]
 ignore = [
     "N802",  # function name should be lowwercase (conflict with PyQt)

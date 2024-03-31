@@ -40,8 +40,8 @@ return {
 				-- "codelldb",  -- c/c++ debugger
 				"cmake-language-server",
 				-- python stuff
-				"python-lsp-server", -- lsp
-				-- "pyright",
+				"python-lsp-server",
+				"isort",
 				"ruff", -- linter with lots of syntex check
 				-- "debugpy", -- used with dap-python
 			},

@@ -7,7 +7,7 @@ local options = {
 		lua = { "stylua" },
 		-- css = { "prettier" },
 		-- html = { "prettier" },
-		python = { "ruff_format" },
+		python = { "isort", "ruff_format" },
 		c = { "clang_format" },
 		cpp = { "clang_format" },
 	},
