@@ -108,7 +108,7 @@ map(
 map("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Trouble Toggle Document Diagnostics" })
 map("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { desc = "Trouble Toggle Loclist" })
 map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Trouble Toggle Quickfix" })
-map("n", "<leader>tlr", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Trouble Toggle LSP References" })
+map("n", "<leader>lr", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Trouble Toggle LSP References" })
 
 -- mappings for nvim-dap
 -- map("n", "<leader>dbp", function ()
