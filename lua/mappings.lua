@@ -111,6 +111,9 @@ map("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { desc = "Trouble Toggl
 map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Trouble Toggle Quickfix" })
 map("n", "<leader>lr", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Trouble Toggle LSP References" })
 
+-- mappings for glow.nvim
+map("n", "<leader>gl", "<cmd>Glow<cr>", { desc = "Glow Open preview windows" })
+
 -- mappings for nvim-dap
 -- map("n", "<leader>dbp", function ()
 --     require('dap').toggle_breakpoint()
