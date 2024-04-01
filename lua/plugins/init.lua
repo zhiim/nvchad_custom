@@ -41,7 +41,6 @@ return {
 				"cmake-language-server",
 				-- python stuff
 				"python-lsp-server",
-				"isort",
 				"ruff", -- linter with lots of syntex check
 				-- "debugpy", -- used with dap-python
 			},

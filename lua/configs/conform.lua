@@ -7,7 +7,7 @@ local options = {
 		lua = { "stylua" },
 		-- css = { "prettier" },
 		-- html = { "prettier" },
-		python = { "isort", "ruff_format" },
+		python = { "ruff_fix", "ruff_format" },
 		c = { "clang_format" },
 		cpp = { "clang_format" },
 	},
@@ -21,6 +21,21 @@ local options = {
 
 conform.setup(options)
 
+conform.formatters.ruff_fix = {
+	args = {
+		"check",
+		"--fix",
+		"--force-exclude",
+		"--exit-zero",
+		"--no-cache",
+		"--config",
+		formatterConfig .. "/ruff.toml",
+		"--stdin-filename",
+		"$FILENAME",
+		"-",
+	},
+}
+
 conform.formatters.ruff_format = {
 	args = {
 		"format",
@@ -31,3 +46,4 @@ conform.formatters.ruff_format = {
 		"-",
 	},
 }
+
