@@ -10,6 +10,7 @@ local options = {
 		python = { "ruff_fix", "ruff_format" },
 		c = { "clang_format" },
 		cpp = { "clang_format" },
+		json = { "clang_format" },
 	},
 
 	format_on_save = {
@@ -46,4 +47,3 @@ conform.formatters.ruff_format = {
 		"-",
 	},
 }
-
