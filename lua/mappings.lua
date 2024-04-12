@@ -133,3 +133,8 @@ map("n", "<leader>gl", "<cmd>Glow<cr>", { desc = "Glow Open preview windows" })
 -- map("n", "<leader>ded", function ()
 --     require('dap').terminate()
 -- end)
+
+-- mappings for diffview
+map("n", "<leader>dv", "<cmd>DiffviewOpen<cr>", { desc = "Diffview Open" })
+map("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Diffview Close" })
+map("n", "<leader>dh", "<cmd>DiffviewFileHistory<cr>", { desc = "Diffview View Files History" })

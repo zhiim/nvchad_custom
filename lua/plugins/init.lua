@@ -186,4 +186,19 @@ return {
 		config = true,
 		cmd = "Glow",
 	},
+
+	{
+		"sindrets/diffview.nvim",
+		cmd = {
+			"DiffviewOpen",
+			"DiffviewClose",
+			"DiffviewToggleFiles",
+			"DiffviewFocusFiles",
+			"DiffviewRefresh",
+			"DiffviewToggleFile",
+			"DiffviewNext",
+			"DiffviewPrev",
+			"DiffviewFileHistory",
+		},
+	},
 }
