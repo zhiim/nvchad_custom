@@ -5,12 +5,13 @@ local options = {
 	formatters_by_ft = {
 		-- use `:lua print(vim.bo.filetype)` to check filetype
 		lua = { "stylua" },
-		-- css = { "prettier" },
-		-- html = { "prettier" },
+		css = { "prettier" },
+		html = { "prettier" },
+		markdown = { "prettier" },
+		json = { "prettier" },
 		python = { "ruff_fix", "ruff_format" },
 		c = { "clang_format" },
 		cpp = { "clang_format" },
-		json = { "clang_format" },
 	},
 
 	format_on_save = {
