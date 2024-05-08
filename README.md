@@ -1,6 +1,6 @@
-# Getting Started
+## Getting Started
 
-## Pre-requisites
+### Pre-requisites
 
 - [Nerd Font](https://www.nerdfonts.com/)
 - Git
@@ -12,7 +12,7 @@
 - Lazygit (optional, using lazygit plugin)
 - Glow (optional, using glow plugin)
 
-## Install
+### Install
 
 ```bash
 # Linux
@@ -23,23 +23,23 @@ git clone https://github.com/zhiim/nvchad_custom.git $ENV:USERPROFILE\AppData\Lo
 nvim
 ```
 
-# Configure
+## Configure
 
-## Neovim Setting
+### Neovim Setting
 
 Edit `lua/options.lua`
 
-## NvChad Setting
+### NvChad Setting
 
 Edit `lua/chadrc.lua`
 
-## Key Mapping
+### Key Mapping
 
 Set custom key mapping by editing `lua/mapping.lua`.
 
 Check [Mappings](https://nvchad.com/docs/config/mappings) for details.
 
-## Plugin Management
+### Plugin Management
 
 Plugin system is built with [lazy.nvim](https://github.com/folke/lazy.nvim).
 
@@ -47,9 +47,9 @@ Add plugins by editing `lua/plugins/init.lua`.
 
 Launch lazy.nvim panel with command `:Lazy`.
 
-## Add Program Language Support
+### Add Program Language Support
 
-### Language Parsers
+#### Language Parsers
 
 Built with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
@@ -64,7 +64,7 @@ Treesitter usage:
 - `:TSInstallInfo` to check installation information for different languages
 - `TSUninstall <package_to_uninstall>` to remove an installed package
 
-### LSP, Linter and Formatter Management
+#### LSP, Linter and Formatter Management
 
 [Mason](https://github.com/williamboman/mason.nvim) is used to management language support packages.
 
@@ -81,13 +81,13 @@ Mason usage:
 - `:MasonUninstallAll` - uninstalls all packages
 - `:MasonLog` - opens the mason.nvim log file in a new tab window
 
-### LSP Configuration
+#### LSP Configuration
 
 LSP configuration support is built with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
 
 Add LSP name to `server` in `lua/configs/lspconfig.lua` (check [server_configurations](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd) for support for specific LSP).
 
-### Format & Lint
+#### Format & Lint
 
 Formatter is built with [conform.nvim](https://github.com/stevearc/conform.nvim).
 
@@ -95,11 +95,11 @@ Lintter is built with [nvim-lint](https://github.com/mfussenegger/nvim-lint).
 
 Trun on a formatter or linter by editing `lua/configs/conform.lua` for formatter and `lua/configs/lint.lua` for linter.
 
-### Debugging Support
+#### Debugging Support
 
 `nvim-dap`, `nvim-dap-ui` plugin have been added for debugging. Plugins for specific language debugging can be found in [Debug Adapter installation](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation).
 
-## Tips
+### Tips
 
 - To share clipboard with system, install `xclip` on Linux with X11, install `win32yank` on Windows for WSL.
 - To use C++ linter with CMake, add `set(CMAKE_EXPORT_COMPILE_COMMANDS ON)` in CMakeList.txt. Also in Windows, `mingw` should be installed and `cmake` should use `make` or `ninja` as build generator.
