@@ -106,3 +106,4 @@ Trun on a formatter or linter by editing `lua/configs/conform.lua` for formatter
 - In Windows, `pylsp` should be used with `venv`.
 - If `nvim-treesitter` output error `Invalid node type at position x for language x`, you can use `:echo nvim_get_runtime_file('parser', v:true)` to check whether more than one parser is used or not, than rename the nvim parser folder to another name to use treesitter parser only.
 - Uncomment `event = "VeryLazy",` in `lua/plugins/init.lua` under "github/copilot.vim" to use github copilot and copilot chat.
+- `rust-analyzer` should be installed globally using `rustup component add rust-analyzer` in Windows.

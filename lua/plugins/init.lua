@@ -46,6 +46,7 @@ return {
 				"prettier",
 				-- rust
 				"rust-analyzer",
+				"rustfmt",
 			},
 		},
 	},
