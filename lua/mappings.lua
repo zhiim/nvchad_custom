@@ -137,3 +137,10 @@ map("n", "<leader>gl", "<cmd>Glow<cr>", { desc = "Glow Open preview windows" })
 map("n", "<leader>dv", "<cmd>DiffviewOpen<cr>", { desc = "Diffview Open" })
 map("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Diffview Close" })
 map("n", "<leader>dh", "<cmd>DiffviewFileHistory<cr>", { desc = "Diffview View Files History" })
+
+-- rust only key mappings
+local bufnr = vim.api.nvim_get_current_buf()
+vim.keymap.set("n", "<leader>a", function()
+	vim.cmd.RustLsp("codeAction") -- supports rust-analyzer's grouping
+	-- or vim.lsp.buf.codeAction() if you don't want grouping.
+end, { silent = true, buffer = bufnr })

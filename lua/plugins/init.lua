@@ -44,6 +44,8 @@ return {
 				"ruff", -- linter with lots of syntex check
 				-- "debugpy", -- used with dap-python
 				"prettier",
+				-- rust
+				"rust-analyzer",
 			},
 		},
 	},
@@ -59,6 +61,7 @@ return {
 				"markdown_inline",
 				"cpp",
 				"python",
+				"rust",
 			},
 		},
 	},
@@ -200,5 +203,11 @@ return {
 			"DiffviewPrev",
 			"DiffviewFileHistory",
 		},
+	},
+
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^4", -- Recommended
+		lazy = false, -- This plugin is already lazy
 	},
 }
