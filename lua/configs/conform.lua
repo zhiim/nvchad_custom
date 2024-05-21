@@ -49,3 +49,7 @@ conform.formatters.ruff_format = {
 		"-",
 	},
 }
+
+conform.formatters.clang_format = {
+	prepend_args = { "--style=Microsoft" },
+}
