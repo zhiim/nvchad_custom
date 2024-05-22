@@ -144,3 +144,7 @@ vim.keymap.set("n", "<leader>a", function()
 	vim.cmd.RustLsp("codeAction") -- supports rust-analyzer's grouping
 	-- or vim.lsp.buf.codeAction() if you don't want grouping.
 end, { silent = true, buffer = bufnr })
+
+map("n", "<leader>mk", function()
+	require("custom_scripts.cmake").cmake_generate()
+end, { desc = "Generate CMake build files" })
