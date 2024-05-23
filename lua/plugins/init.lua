@@ -34,18 +34,22 @@ return {
 				-- lua
 				"lua-language-server",
 				"stylua",
+
 				-- c/cpp stuff
 				"clangd",
 				"clang-format",
 				-- "codelldb",  -- c/c++ debugger
 				"cmake-language-server",
+
 				-- python stuff
 				"python-lsp-server",
 				"ruff", -- linter with lots of syntex check
 				-- "debugpy", -- used with dap-python
+
 				-- rust
 				"rust-analyzer",
 				"rustfmt",
+
 				-- markdown
 				"markdownlint",
 				"prettier",
