@@ -43,10 +43,12 @@ return {
 				"python-lsp-server",
 				"ruff", -- linter with lots of syntex check
 				-- "debugpy", -- used with dap-python
-				"prettier",
 				-- rust
 				"rust-analyzer",
 				"rustfmt",
+				-- markdown
+				"markdownlint",
+				"prettier",
 			},
 		},
 	},

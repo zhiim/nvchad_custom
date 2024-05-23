@@ -3,6 +3,7 @@ local linterConfig = vim.fn.stdpath("config") .. "/linter_configs"
 
 lint.linters_by_ft = {
 	python = { "ruff" },
+	markdown = { "markdownlint" },
 }
 
 vim.keymap.set("n", "<leader>lt", function()
@@ -22,6 +23,12 @@ lint.linters.ruff.args = {
 	"--config",
 	linterConfig .. "/ruff.toml",
 	"-",
+}
+
+lint.linters.markdownlint.args = {
+	"--disable",
+	"MD013",
+	"--",
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
