@@ -47,8 +47,8 @@ return {
 				-- "debugpy", -- used with dap-python
 
 				-- rust
-				"rust-analyzer",
-				"rustfmt",
+				-- "rust-analyzer",
+				-- "rustfmt",
 
 				-- markdown
 				"markdownlint",
@@ -212,9 +212,9 @@ return {
 		},
 	},
 
-	{
-		"mrcjkb/rustaceanvim",
-		version = "^4", -- Recommended
-		lazy = false, -- This plugin is already lazy
-	},
+	-- {
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	version = "^4", -- Recommended
+	-- 	lazy = false, -- This plugin is already lazy
+	-- },
 }

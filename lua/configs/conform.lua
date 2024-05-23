@@ -12,7 +12,7 @@ local options = {
 		python = { "ruff_fix", "ruff_format" },
 		c = { "clang_format" },
 		cpp = { "clang_format" },
-		rust = { "rustfmt" },
+		-- rust = { "rustfmt" },
 	},
 
 	format_on_save = {
