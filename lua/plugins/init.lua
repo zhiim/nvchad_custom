@@ -217,4 +217,9 @@ return {
 	-- 	version = "^4", -- Recommended
 	-- 	lazy = false, -- This plugin is already lazy
 	-- },
+
+	{
+		"itchyny/vim-cursorword",
+		event = "VeryLazy",
+	},
 }
